@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HomeWork1
 {
-    class Vetvleniye
+    public static class Vetvleniye
     {
         
         //Пользователь вводит 2 числа (A и B). Если A>B, подсчитать A+B, если A=B, подсчитать A*B, если A<B, подсчитать A-B.
