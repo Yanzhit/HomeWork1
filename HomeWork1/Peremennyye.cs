@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HomeWork1
 {
-    public static class Variables
+    public static class Peremennyye
     {
         // Решение уравнения (5 * a + b * b) / (b - a)
 
