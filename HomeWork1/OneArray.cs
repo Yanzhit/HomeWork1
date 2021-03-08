@@ -127,6 +127,7 @@ namespace HomeWork1
 
         // 9. Отсортировать массив по возрастанию одним из способов:  
         //    пузырьком(Bubble), выбором (Select) или вставками (Insert)) 
+        //    Пузырьком(Bubble):
         public static int[] SortArrayAscending(int[] array)
         {
             int tmp;
@@ -147,6 +148,7 @@ namespace HomeWork1
 
         // 10. Отсортировать массив по убыванию одним из способов, (отличным от способа в 9-м задании) :  
         //     пузырьком(Bubble), выбором (Select) или вставками (Insert))
+        //     Выбором (Select):
         public static int[] SortArrayDescending(int[] array)
         {
             int tmp;

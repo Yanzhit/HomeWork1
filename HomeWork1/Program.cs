@@ -45,7 +45,7 @@ namespace HomeWork1
               Console.WriteLine("11. " + Tsikly.FindNumberSumEvenMoreSumOdd(50));
               Console.WriteLine("12. " + Tsikly.FindSameNumbers(500, 99));
               Console.WriteLine();
-              */
+              
             // Одномерные массивы
             Console.WriteLine("  Одномерные массивы");
             int n = 10;
@@ -57,13 +57,13 @@ namespace HomeWork1
                 Console.Write(a[i] + " ");
             }
            
-            Console.WriteLine(); /*
+            Console.WriteLine(); 
             Console.WriteLine("1. Минимальный элемент массива: " + OneArray.FindMinArray(a));
             Console.WriteLine("2. Максимальный элемент массива: " + OneArray.FindMaxArray(a));
             Console.WriteLine("3. Индекс минимального элемента массива: " + OneArray.FindIndMinArray(a));
             Console.WriteLine("4. Индекс максимального элемента массива: " + OneArray.FindIndMaxArray(a));
             Console.WriteLine("5. Cумма элементов массива с нечетными индексами: " + OneArray.FindSumArrayOddInd(a));
-            */
+           
             //Console.WriteLine("6. Реверс массива: ");
             //OneArray.ReverseArray(a);
 
@@ -82,6 +82,43 @@ namespace HomeWork1
                 Console.Write(a[i] + " ");
             }
             Console.WriteLine();
+            */
+            // Двумерные массивы
+            Console.WriteLine("  Двумерные массивы");
+            
+            int rows=5, columns = 5;
+            int[,] array = new int[rows, columns];
+            Random random = new Random();
+            
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    array[i, j] = random.Next(10, 50);
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            
+            Console.WriteLine();
+
+            Console.WriteLine("1. Минимальный элемент массива: " + TwoArray.FindMinTwoArray(array, rows, columns));
+            Console.WriteLine("2. Максимальный элемент массива: " + TwoArray.FindMaxTwoArray(array, rows, columns));
+            Console.WriteLine("3. Индекс минимального элемента массива: " + TwoArray.FindIndMinTwoArray(array, rows, columns));
+            Console.WriteLine("4. Индекс минимального элемента массива: " + TwoArray.FindIndMaxTwoArray(array, rows, columns));
+            Console.WriteLine("5. Кол-во эл-в массива, которые больше всех своих соседей: " + TwoArray.FindCountMaxTwoArray(array, rows, columns));
+
+            Console.WriteLine("6. Отразить массив относительно его главной диагонали: ");
+
+            int[,] a = TwoArray.FlipArrayRelativeMainDiagonal(array, rows, columns);
+            for (int i = 0; i < columns; i++)
+            {
+                for (int j = 0; j < rows; j++)
+                {
+                    Console.Write(a[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
