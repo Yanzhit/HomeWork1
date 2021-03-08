@@ -6,7 +6,7 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            /*  double a = 2, b = 5, c=-7, x1=0, y1=-5, x2=4, y2=3;
+              double a = 2, b = 5, c=-7, x1=0, y1=-5, x2=4, y2=3;
               int n=89;
               string s1 = "123", s2 = "456";
 
@@ -45,56 +45,56 @@ namespace HomeWork1
               Console.WriteLine("11. " + Tsikly.FindNumberSumEvenMoreSumOdd(50));
               Console.WriteLine("12. " + Tsikly.FindSameNumbers(500, 99));
               Console.WriteLine();
-              
+             
             // Одномерные массивы
             Console.WriteLine("  Одномерные массивы");
-            int n = 10;
-            int[] a = new int[n];
+            int m = 10;
+            int[] mas = new int[m];
             Random random = new Random();
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < m; i++)
             {
-                a[i] = random.Next(1, n);
-                Console.Write(a[i] + " ");
+                mas[i] = random.Next(1, m);
+                Console.Write(mas[i] + " ");
             }
            
             Console.WriteLine(); 
-            Console.WriteLine("1. Минимальный элемент массива: " + OneArray.FindMinArray(a));
-            Console.WriteLine("2. Максимальный элемент массива: " + OneArray.FindMaxArray(a));
-            Console.WriteLine("3. Индекс минимального элемента массива: " + OneArray.FindIndMinArray(a));
-            Console.WriteLine("4. Индекс максимального элемента массива: " + OneArray.FindIndMaxArray(a));
-            Console.WriteLine("5. Cумма элементов массива с нечетными индексами: " + OneArray.FindSumArrayOddInd(a));
-           
-            //Console.WriteLine("6. Реверс массива: ");
-            //OneArray.ReverseArray(a);
+            Console.WriteLine("1. Минимальный элемент массива: " + OneArray.FindMinArray(mas));
+            Console.WriteLine("2. Максимальный элемент массива: " + OneArray.FindMaxArray(mas));
+            Console.WriteLine("3. Индекс минимального элемента массива: " + OneArray.FindIndMinArray(mas));
+            Console.WriteLine("4. Индекс максимального элемента массива: " + OneArray.FindIndMaxArray(mas));
+            Console.WriteLine("5. Cумма элементов массива с нечетными индексами: " + OneArray.FindSumArrayOddInd(mas));
+            Console.WriteLine("7. Количество нечетных элементов массива: " + OneArray.CountOddArray(mas));
+            
+            Console.WriteLine("6. Реверс массива: ");
+            OneArray.ReverseArray(mas);
+            OneArray.OutPut(mas);
 
-            Console.WriteLine("7. Количество нечетных элементов массива: " + OneArray.CountOddArray(a));
+            Console.WriteLine("8. Поменять местами первую и вторую половину массива: ");           
+            OneArray.SwapHalfArray(mas);
+            OneArray.OutPut(mas);
 
-            //Console.WriteLine("8. Поменять местами первую и вторую половину массива: ");           
-            //OneArray.SwapHalfArray(a);
-
-            //Console.WriteLine("9. Отсортировать массив по возрастанию : ");
-            //OneArray.SortArrayAscending(a);
+            Console.WriteLine("9. Отсортировать массив по возрастанию : ");
+            OneArray.SortArrayAscending(mas);
+            OneArray.OutPut(mas);
 
             Console.WriteLine("10. Отсортировать массив по убыванию : ");
-            OneArray.SortArrayDescending(a);
-            for (int i = 0; i < a.Length; i++)
-            {
-                Console.Write(a[i] + " ");
-            }
+            OneArray.SortArrayDescending(mas);
+            OneArray.OutPut(mas);
+            
             Console.WriteLine();
-            */
+
             // Двумерные массивы
             Console.WriteLine("  Двумерные массивы");
             
             int rows=5, columns = 5;
             int[,] array = new int[rows, columns];
-            Random random = new Random();
+            Random rand = new Random();
             
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    array[i, j] = random.Next(10, 50);
+                    array[i, j] = rand.Next(10, 50);
                     Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine();
@@ -110,12 +110,12 @@ namespace HomeWork1
 
             Console.WriteLine("6. Отразить массив относительно его главной диагонали: ");
 
-            int[,] a = TwoArray.FlipArrayRelativeMainDiagonal(array, rows, columns);
+            int[,] ar = TwoArray.FlipArrayRelativeMainDiagonal(array, rows, columns);
             for (int i = 0; i < columns; i++)
             {
                 for (int j = 0; j < rows; j++)
                 {
-                    Console.Write(a[i, j] + " ");
+                    Console.Write(ar[i, j] + " ");
                 }
                 Console.WriteLine();
             }

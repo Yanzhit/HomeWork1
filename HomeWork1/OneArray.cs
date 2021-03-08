@@ -168,5 +168,15 @@ namespace HomeWork1
             }
             return array;
         }
+
+        // Вывод
+        public static void OutPut(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
