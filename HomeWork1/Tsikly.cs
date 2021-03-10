@@ -9,12 +9,24 @@ namespace HomeWork1
         // 1. Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
         public static double Pow(double a, double b)
         {
-            double c=1;
-            for (int i = 0; i < b; i++)
+            double c = 1;
+            if (b < 0)
             {
-                c = c * a;
+                for (int i = 0; i > b; i--)
+                {
+                    c = c * a;
+                }
+                return 1/c;
             }
-            return c;
+            else
+            {
+                for (int i = 0; i < b; i++)
+                {
+                    c = c * a;
+                }
+                return c;
+            }  
+
         }
 
         // 2. Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
@@ -104,18 +116,25 @@ namespace HomeWork1
         // 7. Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
         public static int FindDivEvklida(int a, int b)
         {
-            while (a != b)
+            if (a==0 || b==0 || a<0 || b<0)
             {
-                if (a > b)
-                {
-                    a -= b;
-                }
-                else
-                {
-                    b -= a;
-                }
+                throw new Exception("Error A , B = 0 ");
             }
-            return a;
+            else
+            {
+                while (a != b)
+                {
+                    if (a > b)
+                    {
+                        a -= b;
+                    }
+                    else
+                    {
+                        b -= a;
+                    }
+                }
+                return a;
+            }
         }
 
         // 8. Пользователь вводит целое положительное число, которое является кубом целого числа N. 
