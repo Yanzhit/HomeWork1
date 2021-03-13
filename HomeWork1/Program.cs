@@ -7,14 +7,13 @@ namespace HomeWork1
         static void Main(string[] args)
         {
               double a = 2, b = 5, c=-7, x1=0, y1=-5, x2=4, y2=3;
-              int n=89;
-              string s1 = "123", s2 = "456";
+              int n=89,  s1 = 123, s2 =456;
 
               //Переменные
               Console.WriteLine("  Переменные");
               Console.WriteLine("1. " + Peremennyye.SolutionEquation(a, b));
-              var s3 = Peremennyye.ToSwap(s1, s2);
-              Console.WriteLine($"2. {s3.Item1} {s3.Item2}");
+              Peremennyye.ToSwap(ref s1, ref s2);
+              Console.WriteLine($"2. {s1}   {s2}");
               Console.WriteLine("3. " + Peremennyye.Division(a, b));
               Console.WriteLine("4. " + Peremennyye.SolutionLinearEquation(a, b, c));
               var ab = Peremennyye.SolutionEquationСoordinates(x1, y1, x2, y2);

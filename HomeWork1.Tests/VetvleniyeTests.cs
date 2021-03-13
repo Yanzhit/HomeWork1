@@ -8,7 +8,6 @@ namespace HomeWork1.Tests
         [TestCase(5, 3, 8)]
         [TestCase(2, 2, 4)]
         [TestCase(4, 10, -6)]
-        [TestCase(4, 4, 4)]
         public void Solution1Test(double a, double b, double expected)
         {
             double actual = Vetvleniye.Solution1(a, b);

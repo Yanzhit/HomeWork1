@@ -22,13 +22,11 @@ namespace HomeWork1
 
         // Поменять местами А и В
 
-        public static (string, string) ToSwap(string a, string b)
+        public static void ToSwap(ref int a, ref int b)
         {
-            string tmp;
-            tmp = a;
+            int tmp = a;
             a = b;
             b = tmp;
-            return (a, b);
         }
 
         // Деление А на В

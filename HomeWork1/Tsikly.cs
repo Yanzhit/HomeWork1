@@ -41,7 +41,7 @@ namespace HomeWork1
             { 
                 for (int i = a; i <= 1000; i += a)
                 {
-                    str = str + Convert.ToString(i) + " ";
+                    str += Convert.ToString(i) + " ";
                 }
             }
             return str;

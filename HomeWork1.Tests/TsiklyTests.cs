@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace HomeWork1.Tests
 {
@@ -16,12 +17,25 @@ namespace HomeWork1.Tests
 
         // 2. Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
         [TestCase(500, "500 1000 ")]
-        [TestCase(0, "Error A = 0 ")]
-        [TestCase(1001, "Error A = 0 ")]
+        [TestCase(100, "100 200 300 400 500 600 700 800 900 1000 ")]
+        [TestCase(1000, "1000 ")]
         public void DivATest(int a, string expected)
         {
             string actual = Tsikly.DivA(a);
             Assert.AreEqual(expected, actual);
+        }
+        [TestCase(0)]
+        public void DivA_WhenAEqualTo0ShouldExcetion(int a)
+        {
+            try
+            {
+                Tsikly.DivA(a);
+            }
+            catch
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
         }
 
         // 3. Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
@@ -67,12 +81,25 @@ namespace HomeWork1.Tests
 
         // 7. Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
         [TestCase(100, 50, 50)]
-        [TestCase(10, 0, 0)]
-        [TestCase(-9, -3, -3)]
         public void FindDivEvklidaTest(int a, int b, int expected)
         {
             int actual = Tsikly.FindDivEvklida(a,b);
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(10, 0)]
+        [TestCase(-9, -3)]
+        public void FindDivEvklida_WhenAOrBEqual0ShouldExcetion(int a, int b)
+        {
+            try
+            {
+                Tsikly.FindDivEvklida(a, b);
+            }
+            catch
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
         }
 
         // 8. Пользователь вводит целое положительное число, которое является кубом целого числа N. 
@@ -86,6 +113,20 @@ namespace HomeWork1.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(126ul)]
+        [TestCase(9ul)]
+        public void FindNBinarySearch_WhenANotCubeNumberShouldExcetion(ulong a)
+        {
+            try
+            {
+                Tsikly.FindNBinarySearch(a);
+            }
+            catch
+            {
+                Assert.Pass();
+            }
+            Assert.Fail();
+        }
         // 9. Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
         [TestCase(12345, 3)]
         [TestCase(0, 0)]
@@ -112,7 +153,7 @@ namespace HomeWork1.Tests
         //     Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
         [TestCase(10, "2 4 6 8 ")]
         [TestCase(45, "2 4 6 8 12 14 16 18 20 21 22 24 26 28 34 36 38 40 41 42 43 44 ")]
-        [TestCase(0, "0")]
+        [TestCase(0, "")]
         public void FindNumberSumEvenMoreSumOddTest(int n, string expected)
         {
             string actual = Tsikly.FindNumberSumEvenMoreSumOdd(n);
